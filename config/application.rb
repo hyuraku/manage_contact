@@ -14,7 +14,7 @@ module ManageContact
     config.generators do |g|
       g.javascript      false
       g.helper          false
-      g.template_engine :haml
+      g.template_engine :slim
       g.test_framework  false
     end
 
