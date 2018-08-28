@@ -62,3 +62,5 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-doc'
 end
+
+gem 'faker'
