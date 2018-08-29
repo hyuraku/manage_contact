@@ -1,0 +1,76 @@
+= form_for @contact do |f|
+  .panel-body
+    - if @contact.errors.any?
+      .row
+        .col-md-12
+          .alert.alert-danger
+            h3
+              | Please correct this following errors:
+            ul
+              - @contact.errors.full_messages.each do |message|
+                li
+                  = message
+    .form-horizontal
+      .row
+        .col-md-8
+          .form-group
+            .control-label.col-md-3
+              = f.label 'Name'
+            .col-md-8
+              = f.text_field :name,class: 'form-control'
+          .form-group
+            .control-label.col-md-3
+              = f.label 'Company'
+            .col-md-8
+              = f.text_field :company,class: 'form-control'
+          .form-group
+            .control-label.col-md-3[for="email"]
+              = f.label 'Email'
+            .col-md-8
+              = f.text_field :email,class: 'form-control'
+          .form-group
+            .control-label.col-md-3[for="phone"]
+              = f.label 'Phone'
+            .col-md-8
+              = f.text_field :phone,class: 'form-control'
+          .form-group
+            .control-label.col-md-3
+              = f.label 'Address'
+            .col-md-8
+              = f.text_area :address,class: 'form-control',row: 3
+          .form-group
+            .control-label.col-md-3[for="group"]
+              = f.label 'Group'
+            .col-md-5
+              = f.collection_select :group_id,Group.all,:id,:name,{id: 'group'},{class: 'form-control'}
+            .col-md-3
+              a#add-group-btn.btn.btn-default.btn-block[href="#"]
+                | Add Group
+          #add-new-group.form-group[style="display: none;"]
+            .col-md-offset-3.col-md-8
+              .input-group
+                input#new_group.form-control[type="text" name="new_group"]
+                span.input-group-btn
+                  a.btn.btn-default[href="#"]
+                    i.glyphicon.glyphicon-ok
+        .col-md-4
+          .fileinput.fileinput-new[data-provides="fileinput"]
+            .fileinput-new.thumbnail[style="width: 150px; height: 150px;"]
+              img[src="http://placehold.it/150x150" alt="Photo"]
+            .fileinput-preview.fileinput-exists.thumbnail[style="max-width: 200px; max-height: 150px;"]
+            .text-center
+              span.btn.btn-default.btn-file
+                span.fileinput-new
+                  | Choose Photo
+                span.fileinput-exists
+                  | Change
+                input[type="file" name="..."]
+              a.btn.btn-default.fileinput-exists[href="#" data-dismiss="fileinput"]
+                | Remove
+  .panel-footer
+    .row
+      .col-md-8
+        .row
+          .col-md-offset-3.col-md-6
+            = f.submit @contact.new_record? ? "Save": "Update",class: "btn btn-primary"
+            = link_to 'Cancel',root_path ,class: "btn btn-default"
