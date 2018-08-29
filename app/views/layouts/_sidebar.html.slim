@@ -1,17 +1,12 @@
 .list-group
-  a.list-group-item.active[href="#"]
-    | All Contact 
+  - active = params[:group_id] ==nil || params[:group_id].empty? ? 'active' : ''
+  = link_to contacts_path,class: "list-group-item #{active}"
+    | All Contact
     span.badge
-      | 10
-  a.list-group-item[href=""]
-    | Family 
-    span.badge
-      | 4
-  a.list-group-item[href=""]
-    | Friends 
-    span.badge
-      | 3
-  a.list-group-item[href=""]
-    | Other 
-    span.badge
-      | 3
+      | #{Contact.count}
+  - @groups.each do |group|
+    - active = params[:group_id].to_i == group.id ? 'active' : ''
+    = link_to contacts_path(group_id: group.id),class: "list-group-item #{active}"
+      | #{group.name}
+      span.badge
+        | #{group.contacts.count}

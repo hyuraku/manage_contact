@@ -1,0 +1,20 @@
+tr
+  td.middle
+    .media
+      .media-left
+        a[href="#"]
+          = image_tag contact.gravatar,class: "media-object"
+      .media-body
+        h4.media-heading
+          | #{contact.name}
+        address
+          strong
+            | #{contact.company}
+          br
+          |  #{contact.email}
+  td.middle[width="100"]
+    div
+      a.btn.btn-circle.btn-default.btn-xs[href="#" title="Edit"]
+        i.glyphicon.glyphicon-edit
+      a.btn.btn-circle.btn-danger.btn-xs[href="#" title="Edit"]
+        i.glyphicon.glyphicon-remove
