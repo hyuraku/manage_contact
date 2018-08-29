@@ -10,6 +10,6 @@ nav.navbar.navbar-default.navbar-fixed-top
       = link_to "My Contact", root_path, class: "navbar-brand text-uppercase"
     #navbar-collapse.collapse.navbar-collapse
       .nav.navbar-right.navbar-btn
-        a.btn.btn-default[href="form.html"]
+        = link_to new_contact_path, class: "btn btn-default"
           i.glyphicon.glyphicon-plus
-          |  Add Contact 
+            | Add Contact
