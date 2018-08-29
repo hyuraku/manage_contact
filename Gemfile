@@ -64,3 +64,6 @@ group :development, :test do
 end
 
 gem 'faker'
+
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'jquery-rails'
