@@ -1,6 +1,10 @@
 class ContactsController < ApplicationController
   def index
-    @contacts = Contact.page(params[:page]).per(7)
+    if params[:group_id] && !params[:group_id].empty?
+      @contacts = Contact.where(group_id: params[:group_id]).page(params[:page]).per(7)
+    else
+      @contacts = Contact.page(params[:page]).per(7)
+    end
     @groups = Group.all
   end
 end
