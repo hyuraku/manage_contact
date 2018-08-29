@@ -14,7 +14,7 @@ tr
           |  #{contact.email}
   td.middle[width="100"]
     div
-      a.btn.btn-circle.btn-default.btn-xs[href="#" title="Edit"]
+      = link_to edit_contact_path(contact),class: "btn btn-circle btn-default btn-xs",title: 'Edit'
         i.glyphicon.glyphicon-edit
       a.btn.btn-circle.btn-danger.btn-xs[href="#" title="Edit"]
         i.glyphicon.glyphicon-remove

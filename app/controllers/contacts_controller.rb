@@ -15,10 +15,24 @@ class ContactsController < ApplicationController
       @contact = Contact.new(contact_params)
       if @contact.save
           flash[:success] = "Contact was successfully created."
-          redirect_to contacts_path
+          redirect_to root_path
       else
           render 'new'
       end
+  end
+
+  def edit
+    @contact = Contact.find(params[:id])
+  end
+
+  def update
+    @contact = Contact.find(params[:id])
+    if @contact.update(contact_params)
+      flash[:success] = "Contact was successfully updated."
+      redirect_to root_path
+    else
+      render 'edit'
+    end
   end
 
   private
