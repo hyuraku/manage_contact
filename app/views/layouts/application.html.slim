@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title
+      | ManageContact
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    = render 'layouts/navbar'
+    .container
+      .row
+        .col-md-3
+          = render 'layouts/sidebar'
+        .col-md-9
+          = yield

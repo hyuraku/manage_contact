@@ -62,3 +62,8 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-doc'
 end
+
+gem 'faker'
+
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'jquery-rails'
