@@ -1,45 +1,6 @@
 .panel.panel-default
   table.table
-    tr
-      td.middle
-        .media
-          .media-left
-            a[href="#"]
-              img.media-object[src="http://placehold.it/100x100" alt="..."]
-          .media-body
-            h4.media-heading
-              | Contact 1
-            address
-              strong
-                | Job
-              br
-              |  contact1@sample.com 
-      td.middle[width="100"]
-        div
-          a.btn.btn-circle.btn-default.btn-xs[href="#" title="Edit"]
-            i.glyphicon.glyphicon-edit
-          a.btn.btn-circle.btn-danger.btn-xs[href="#" title="Edit"]
-            i.glyphicon.glyphicon-remove
-    tr
-      td.middle
-        .media
-          .media-left
-            a[href="#"]
-              img.media-object[src="http://placehold.it/100x100" alt="..."]
-          .media-body
-            h4.media-heading
-              | Contact 2
-            address
-              strong
-                | Job 2
-              br
-              |  contact2@sample.com 
-      td.middle[width="100"]
-        div
-          a.btn.btn-circle.btn-default.btn-xs[href="#" title="Edit"]
-            i.glyphicon.glyphicon-edit
-          a.btn.btn-circle.btn-danger.btn-xs[href="#" title="Edit"]
-            i.glyphicon.glyphicon-remove
+    =render @contacts
 .text-center
   nav
     ul.pagination

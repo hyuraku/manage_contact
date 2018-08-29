@@ -1,0 +1,21 @@
+- @contacts.each do |contact|
+  tr
+    td.middle
+      .media
+        .media-left
+          a[href="#"]
+            img.media-object[src="http://placehold.it/100x100" alt="..."]
+        .media-body
+          h4.media-heading
+            | #{contact.name}
+          address
+            strong
+              | #{contact.company}
+            br
+            |  #{contact.email}
+    td.middle[width="100"]
+      div
+        a.btn.btn-circle.btn-default.btn-xs[href="#" title="Edit"]
+          i.glyphicon.glyphicon-edit
+        a.btn.btn-circle.btn-danger.btn-xs[href="#" title="Edit"]
+          i.glyphicon.glyphicon-remove
