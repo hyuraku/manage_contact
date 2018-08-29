@@ -1,3 +1,6 @@
+- if @contacts.blank?
+  .alert.alert-warning
+    | Not Fount
 .panel.panel-default
   table.table
     =render @contacts
