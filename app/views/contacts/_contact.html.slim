@@ -3,7 +3,7 @@ tr
     .media
       .media-left
         a[href="#"]
-          = image_tag contact.gravatar,class: "media-object"
+          = image_tag contact.avatar.url(:thumb),class: "media-object",style: "width:100px; height100px"
       .media-body
         h4.media-heading
           | #{contact.name}
