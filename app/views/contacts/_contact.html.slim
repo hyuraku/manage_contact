@@ -16,5 +16,5 @@ tr
     div
       = link_to edit_contact_path(contact),class: "btn btn-circle btn-default btn-xs",title: 'Edit'
         i.glyphicon.glyphicon-edit
-      a.btn.btn-circle.btn-danger.btn-xs[href="#" title="Edit"]
+      = link_to "/contacts/#{contact.id}", method: :delete,data: { confirm: 'Are you sure?' },class: "btn btn-circle btn-danger btn-xs",title: 'Delete'
         i.glyphicon.glyphicon-remove
