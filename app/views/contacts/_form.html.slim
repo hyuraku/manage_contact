@@ -42,7 +42,9 @@
             .control-label.col-md-3[for="group"]
               = f.label 'Group'
             .col-md-5
-              = f.collection_select :group_id,Group.all,:id,:name,{id: 'group'},{class: 'form-control'}
+              - attr = {prompt: 'Select Group'}
+              - attr[:selected] = session[:selected_group_id].to_i if session[:selected_group_id]
+              = f.collection_select :group_id,Group.all,:id,:name,attr,{class: 'form-control'}
             .col-md-3
               a#add-group-btn.btn.btn-default.btn-block[href="#"]
                 | Add Group

@@ -71,3 +71,7 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'paperclip', '~> 6.1'
 gem 'jasny-bootstrap-rails', '~> 3.1', '>= 3.1.3'
+
+group :development do
+  gem 'bullet'
+end
