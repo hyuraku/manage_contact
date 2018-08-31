@@ -1,8 +1,9 @@
-- if @contacts.blank?
-  .alert.alert-warning
-    | Not Fount
 .panel.panel-default
   table.table
     =render @contacts
+  - if @contacts.blank?
+    .panel-footer.message
+      .alert.alert-warning
+          | Not Fount
 .text-center
   = paginate @contacts
