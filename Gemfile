@@ -69,3 +69,5 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'jquery-rails'
 
 gem 'kaminari'
+gem 'paperclip', '~> 6.1'
+gem 'jasny-bootstrap-rails', '~> 3.1', '>= 3.1.3'

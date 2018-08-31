@@ -1,4 +1,4 @@
-= form_for @contact do |f|
+= form_for @contact,html: { multipart: true } do |f|
   .panel-body
     - if @contact.errors.any?
       .row
@@ -56,7 +56,7 @@
         .col-md-4
           .fileinput.fileinput-new[data-provides="fileinput"]
             .fileinput-new.thumbnail[style="width: 150px; height: 150px;"]
-              img[src="http://placehold.it/150x150" alt="Photo"]
+              = image_tag @contact.avatar.url(:medium)
             .fileinput-preview.fileinput-exists.thumbnail[style="max-width: 200px; max-height: 150px;"]
             .text-center
               span.btn.btn-default.btn-file
@@ -64,7 +64,7 @@
                   | Choose Photo
                 span.fileinput-exists
                   | Change
-                input[type="file" name="..."]
+                = f.file_field :avatar
               a.btn.btn-default.fileinput-exists[href="#" data-dismiss="fileinput"]
                 | Remove
   .panel-footer
