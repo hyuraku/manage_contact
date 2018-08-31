@@ -13,3 +13,10 @@ nav.navbar.navbar-default.navbar-fixed-top
         = link_to new_contact_path, class: "btn btn-default"
           i.glyphicon.glyphicon-plus
             | Add Contact
+      = form_tag(contacts_path,class: "navbar-form navbar-right",role: 'search',method: :get) do
+        .input-group
+          = text_field_tag :term,params[:term],class: "form-control",placeholder: 'Search...',autocomplete: 'off'
+          = hidden_field_tag :group_id,params[:group_id]
+          span.input-group-btn
+            button.btn.btn-default,type='submit'
+              i.glyphicon.glyphicon-search
