@@ -14,20 +14,24 @@ class Contact < ApplicationRecord
     "https://www.gravatar.com/avatar/#{hash}"
   end
 
-  def self.search(term)
-    if term && !term.empty?
-      where('name LIKE ?', "%#{term}%")
-    else
-      all
-    end
-  end
+  scope :search, -> (term) { where('LOWER(name) LIKE :term or LOWER(company) LIKE :term or LOWER(email) LIKE :term',term:  "%#{term.downcase}%") if term .present? }
 
-  def self.by_group(group_id)
-    if group_id && !group_id.empty?
-      where(group_id: group_id)
-    else
-      all
-    end
-  end
+  # def self.search(term)
+  #   if term && !term.empty?
+  #     where('name LIKE ?', "%#{term}%")
+  #   else
+  #     all
+  #   end
+  # end
+
+  scope :by_group, -> (group_id) { where(group_id: group_id) if group_id.present?}
+
+  # def self.by_group(group_id)
+  #   if group_id && !group_id.empty?
+  #     where(group_id: group_id)
+  #   else
+  #     all
+  #   end
+  # end
 
 end
