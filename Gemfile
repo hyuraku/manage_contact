@@ -75,3 +75,5 @@ gem 'jasny-bootstrap-rails', '~> 3.1', '>= 3.1.3'
 group :development do
   gem 'bullet'
 end
+
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
