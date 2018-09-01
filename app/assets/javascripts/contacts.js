@@ -4,6 +4,7 @@ $(function(){
     minLength: 3,
     select: function(event, ui) {
       $('#term').val(ui.item.value);
+      $(this).closest('form').submit();
     }
   });
 });
