@@ -62,3 +62,16 @@ body {
 .alert-warning{
 	margin-bottom: 0;
 }
+
+.ui-autocomplete{
+	position: relative;
+	z-index: 999 !important;
+	cursor: default;
+	background-color: rgba(225, 207, 207, 0.63);
+	padding-top: 20px;
+}
+
+
+.ui-helper-hidden-accessible{
+	display: none;
+}

@@ -38,6 +38,11 @@ class ContactsController < ApplicationController
     redirect_to root_path
   end
 
+  def autocomplete
+    @contacts = Contact.search(params[:term]).order(created_at: :desc).page(params[:page])
+    render json: @contacts.map{ |contact|{ id: contact.id, value: contact.name} }
+  end
+
   private
 
   def find_contact
