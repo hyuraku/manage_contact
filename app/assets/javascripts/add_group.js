@@ -37,8 +37,7 @@ $( document ).on('turbolinks:load',function() {
           $('#contact_group_id').append(newOption);
 
           newGroup.val("");
-
-        };
+        }
       },
       error: function(xhr) {
         console.log(xhr);
