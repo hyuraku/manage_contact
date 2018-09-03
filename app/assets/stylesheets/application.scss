@@ -1,8 +1,10 @@
 /*
 *= require jasny-bootstrap.min
+*= jquery-ui/autocomplete
+*= jquery-ui/menu
 */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "contacts";
-@import "reset"
+@import "reset";

@@ -14,7 +14,7 @@ class Contact < ApplicationRecord
     "https://www.gravatar.com/avatar/#{hash}"
   end
 
-  scope :search, -> (term) { where('LOWER(name) LIKE :term or LOWER(company) LIKE :term or LOWER(email) LIKE :term',term:  "%#{term.downcase}%") if term .present? }
+  scope :search, -> (term) { where('LOWER(name) LIKE :term or LOWER(company) LIKE :term or LOWER(email) LIKE :term',term:  "%#{term.downcase}%") if term.present? }
 
   # def self.search(term)
   #   if term && !term.empty?
