@@ -1,4 +1,12 @@
 .panel.panel-default
+  .panel-heading.clearfix
+    .pull-left
+      h4
+        All Contacts
+    .pull-right
+      = link_to new_contact_path, class: "btn btn-success"
+        i.glyphicon.glyphicon-plus
+          | Add Contact
   table.table
     =render @contacts
   - if @contacts.blank?

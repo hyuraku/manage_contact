@@ -13,7 +13,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require jquery
-//= require bootstrap-sprockets
+//= require bootstrap/dropdown
 //= require jasny-bootstrap.min
 //= require jquery-ui/core
 //= require jquery-ui/widget
