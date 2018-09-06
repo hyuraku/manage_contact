@@ -10,10 +10,4 @@ html
     = render 'layouts/navbar'
     .container
       .row
-        .col-md-3
-          = render 'layouts/sidebar'
-        .col-md-9
-          / p.notice= notice
-          / p.alert= alert
-          = render 'layouts/message' if !flash.empty?
-          = yield
+        = yield

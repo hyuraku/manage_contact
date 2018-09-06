@@ -1,17 +1,23 @@
-.panel.panel-default
-  .panel-heading.clearfix
-    .pull-left
-      h4
-        All Contacts
-    .pull-right
-      = link_to new_contact_path, class: "btn btn-success"
-        i.glyphicon.glyphicon-plus
-          | Add Contact
-  table.table
-    =render @contacts
-  - if @contacts.blank?
-    .panel-footer.message
-      .alert.alert-warning
-          | Not Fount
-.text-center
-  = paginate @contacts
+.col-md-3
+  = render 'layouts/sidebar'
+.col-md-9
+  / p.notice= notice
+  / p.alert= alert
+  = render 'layouts/message' if !flash.empty?
+  .panel.panel-default
+    .panel-heading.clearfix
+      .pull-left
+        h4
+          All Contacts
+      .pull-right
+        = link_to new_contact_path, class: "btn btn-success"
+          i.glyphicon.glyphicon-plus
+            | Add Contact
+    table.table
+      =render @contacts
+    - if @contacts.blank?
+      .panel-footer.message
+        .alert.alert-warning
+            | Not Fount
+  .text-center
+    = paginate @contacts
