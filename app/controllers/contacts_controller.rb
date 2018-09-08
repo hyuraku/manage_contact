@@ -1,5 +1,7 @@
 class ContactsController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_contact,only: [:edit,:update,:destroy]
+
   def index
     session[:selected_group_id] = params[:group_id]
     @contacts = Contact.by_group(params[:group_id]).search(params[:term]).order(created_at: :desc).page(params[:page])
