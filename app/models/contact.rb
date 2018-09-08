@@ -1,5 +1,6 @@
 class Contact < ApplicationRecord
   belongs_to :group
+  belongs_to :user
 
   validates :name,:email,:group_id,presence: true
   validates :name,length: {minimum: 4}
