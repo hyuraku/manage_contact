@@ -10,9 +10,9 @@ nav.navbar.navbar-default.navbar-fixed-top
       = link_to "My Contact", root_path, class: "navbar-brand text-uppercase"
     #navbar-collapse.collapse.navbar-collapse
       ul.nav.navbar-nav
-        li.active
+        li class="#{active_item('dashboard')}"
           = link_to 'Dashboard',dashboard_path
-        li
+        li class="#{active_item('contacts')}"
           =link_to 'All Contacts',contacts_path
       - if !user_signed_in?
         .navbar-right

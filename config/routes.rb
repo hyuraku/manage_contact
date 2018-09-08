@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
+
   get 'dashbord/index'
 
   devise_for :users
@@ -8,5 +10,5 @@ Rails.application.routes.draw do
 
   resources :groups, only: [:create]
   get '/dashboard' => "dashboard#index"
-  root 'contacts#index'
+  root 'home#index'
 end
