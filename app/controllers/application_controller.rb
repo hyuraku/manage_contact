@@ -7,10 +7,6 @@ class ApplicationController < ActionController::Base
     stored_location_for(resource) || dashboard_path
   end
 
-  def  after_sign_in_path_for(resource)
-     after_sign_in_path_for(resource)
-  end
-
   protected
 
   def configure_permitted_parameters

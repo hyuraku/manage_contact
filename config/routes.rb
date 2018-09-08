@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-  get 'dashboard/index'
 
-  get 'dashbord/index'
-
-  devise_for :users
+  devise_for :users, path: 'auth', path_names: { sign_in: 'login', sign_out: 'logout',sign_up: 'register' }
   resources :contacts,except: [:show] do
     get 'autocomplete',on: :collection
   end
 
   resources :groups, only: [:create]
+  get 'dashboard/index'
   get '/dashboard' => "dashboard#index"
   root 'home#index'
 end
