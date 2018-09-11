@@ -79,3 +79,5 @@ end
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
 gem 'devise'
+
+gem 'pundit'
