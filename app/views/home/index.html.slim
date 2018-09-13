@@ -1,2 +1,7 @@
-h1
-  | Home#index
+.col-md-10.col-md-offset-1
+  .jumbotron.text-center
+    h1 Free Online Contact Manager
+    p.lead Organize your contacts freely and easily
+    p
+      = link_to 'Sign_up', new_user_registration_path, class: "btn btn-primary btn-lg"
+      = link_to 'Sign_in', new_user_session_path, class: "btn btn-default btn-lg"
