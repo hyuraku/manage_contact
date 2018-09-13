@@ -1,2 +1,6 @@
-h1 Dashboard#index
-p Find me in app/views/dashboard/index.html.slim
+.col-md-10.col-md-offset-1
+  .jumbotron.text-center
+    h2 Hello #{current_user.name}
+    p.lead Welcome to Contact Manager App
+    p
+      = link_to 'Manage Your Contacts', contacts_path, class: "btn btn-primary btn-lg"

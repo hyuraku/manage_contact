@@ -57,6 +57,8 @@ gem 'html2slim'
 
 gem 'slim-rails'
 
+gem 'slim'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
