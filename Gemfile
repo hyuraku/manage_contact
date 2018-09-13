@@ -57,7 +57,7 @@ gem 'html2slim'
 
 gem 'slim-rails'
 
-gem 'slim','3.1.0'
+gem 'slim'
 
 group :development, :test do
   gem 'pry-rails'
