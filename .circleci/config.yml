@@ -18,7 +18,6 @@ jobs:
 
       - image: circleci/postgres:9.5-alpine
         environment:
-          POSTGRES_USER: manageContact
           POSTGRES_DB: manageContact_test
           POSTGRES_PASSWORD: ""
 
