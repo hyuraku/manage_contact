@@ -83,6 +83,10 @@ gem 'jasny-bootstrap-rails', '~> 3.1', '>= 3.1.3'
 
 group :development do
   gem 'bullet'
+
+  gem 'guard', '~> 2.14.0'
+  gem 'guard-rspec', '~> 4.7.2' 
+  gem 'guard-cucumber', '~> 2.1.2'
 end
 
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
