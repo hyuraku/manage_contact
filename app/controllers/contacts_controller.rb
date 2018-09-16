@@ -22,7 +22,7 @@ class ContactsController < ApplicationController
   end
 
   def edit
-
+    authorize @contact
   end
 
   def update

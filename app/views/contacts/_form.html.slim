@@ -4,30 +4,31 @@
       .row
         .col-md-12
           .alert.alert-danger
-            h3
-              | Please correct this following errors:
-            ul
-              - @contact.errors.full_messages.each do |message|
-                li
-                  = message
+            h3 Please fill in the form correctly!
     .form-horizontal
       .row
         .col-md-8
-          .form-group
+          = content_tag :div,class: "form-group #{ "has-error" if has_error?(@contact,:name) }" do
             .control-label.col-md-3
               = f.label 'Name'
             .col-md-8
               = f.text_field :name,class: 'form-control'
+              - if has_error?(@contact,:name)
+                span.help-block
+                  = get_error(@contact,:name)
           .form-group
             .control-label.col-md-3
               = f.label 'Company'
             .col-md-8
               = f.text_field :company,class: 'form-control'
-          .form-group
-            .control-label.col-md-3[for="email"]
+          = content_tag :div,class: "form-group #{ "has-error" if has_error?(@contact,:email) }" do
+            .control-label.col-md-3
               = f.label 'Email'
             .col-md-8
               = f.text_field :email,class: 'form-control'
+              - if has_error?(@contact,:email)
+                span.help-block
+                  = get_error(@contact,:email)
           .form-group
             .control-label.col-md-3[for="phone"]
               = f.label 'Phone'
@@ -38,8 +39,8 @@
               = f.label 'Address'
             .col-md-8
               = f.text_area :address,class: 'form-control',row: 3
-          .form-group
-            .control-label.col-md-3[for="group"]
+          = content_tag :div,class: "form-group #{ "has-error" if has_error?(@contact,:group_id) }" do
+            .control-label.col-md-3
               = f.label 'Group'
             .col-md-5
               - attr = {prompt: 'Select Group'}
@@ -48,6 +49,11 @@
             .col-md-3
               a#add-group-btn.btn.btn-default.btn-block[href="#"]
                 | Add Group
+            - if has_error?(@contact,:group_id)
+              .form-group
+                .col-md-offset-3.col-md-8
+                  span.help-block
+                    = get_error(@contact,:group_id)
           #add-new-group.form-group
             .col-md-offset-3.col-md-8
               .input-group
