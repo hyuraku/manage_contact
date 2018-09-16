@@ -96,3 +96,5 @@ gem 'devise'
 gem 'pundit'
 
 gem 'rake', '< 11.0'
+
+gem 'toastr-rails'

@@ -1,0 +1,7 @@
+- unless flash.empty?
+  - flash.each do |type, message|
+    - type = 'info' if type == 'notice'
+    - type = 'error' if type == 'alert'
+    - type =type.to_s
+    javascript:
+      toastr['#{type}']('#{message}',"#{type.upcase}");
