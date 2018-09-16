@@ -64,7 +64,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-doc'
 
-  gem 'rspec-rails','3.1.0'
+  gem 'rspec-rails','3.6.0'
 end
 
 group :test do
@@ -85,7 +85,7 @@ group :development do
   gem 'bullet'
 
   gem 'guard', '~> 2.14.0'
-  gem 'guard-rspec', '~> 4.7.2' 
+  gem 'guard-rspec', '~> 4.7.2'
   gem 'guard-cucumber', '~> 2.1.2'
 end
 
