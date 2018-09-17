@@ -13,11 +13,11 @@
         = link_to new_contact_path, class: "btn btn-success"
           i.glyphicon.glyphicon-plus
             | Add Contact
-    table.table
+    table.table#contacts
       =render @contacts
     - if @contacts.blank?
       .panel-footer.message
         .alert.alert-warning
             | Not Fount
-  .text-center
-    = paginate @contacts
+  .text-center#paginator
+    = paginate @contacts,remote: true
