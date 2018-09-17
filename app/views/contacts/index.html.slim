@@ -1,4 +1,4 @@
-.col-md-3
+.col-md-3#sidebar
   = render 'layouts/sidebar'
 .col-md-9
   / p.notice= notice
@@ -10,14 +10,14 @@
         h4
           | All Contacts
       .pull-right
-        = link_to new_contact_path, class: "btn btn-success"
+        = link_to new_contact_path, class: "btn btn-success",remote: true
           i.glyphicon.glyphicon-plus
             | Add Contact
-    table.table
+    table.table#contacts
       =render @contacts
     - if @contacts.blank?
       .panel-footer.message
         .alert.alert-warning
             | Not Fount
-  .text-center
-    = paginate @contacts
+  .text-center#paginator
+    = paginate @contacts,remote: true
