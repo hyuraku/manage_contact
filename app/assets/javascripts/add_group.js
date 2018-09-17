@@ -1,7 +1,14 @@
 $( document ).on('turbolinks:load',function() {
+
+  // $('.pagination a[data-remote="true"]').click(function () {
+  //   console.log("hwe");
+  //   history.pushState(null, null, $(this).attr('href'));
+  //   console.log("after");
+  // })
+
   $('#term').autocomplete({
     source: "/contacts/autocomplete",
-    minLength: 3,
+    minLength: 2,
     select: function(event, ui) {
       $('#term').val(ui.item.value);
       $(this).closest('form').submit();
