@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
 
   def index
     session[:selected_group_id] = params[:group_id]
-    @contacts = Contact.by_group(params[:group_id]).search(params[:term]).order(created_at: :desc).page(params[:page])
+    @contacts = current_user.contacts.by_group(params[:group_id]).search(params[:term]).order(created_at: :desc).page(params[:page])
   end
 
   def new
