@@ -14,6 +14,8 @@
 //= require turbolinks
 //= require jquery
 //= require bootstrap/dropdown
+//= require bootstrap/modal
+//= require bootstrap/transition
 //= require jasny-bootstrap.min
 //= require jquery-ui/core
 //= require jquery-ui/widget

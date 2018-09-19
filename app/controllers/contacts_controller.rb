@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+  # protect_from_forgery except: :create
+  protect_from_forgery except: :create
   before_action :authenticate_user!
   before_action :find_contact,only: [:edit,:update,:destroy]
 
@@ -18,7 +20,7 @@ class ContactsController < ApplicationController
           redirect_to contacts_path(previous_query_string)
       else
           flash[:error] = "Contact failed to be created."
-          render 'new'
+          render :new
       end
   end
 

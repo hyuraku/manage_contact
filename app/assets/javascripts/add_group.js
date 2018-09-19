@@ -5,6 +5,15 @@ $( document ).on('turbolinks:load',function() {
   //   history.pushState(null, null, $(this).attr('href'));
   //   console.log("after");
   // })
+  $('#form-modal-save-btn').click(function(){
+    $('#new_contact').submit();
+  });
+
+  $('body').on('click','.pagination a[data-remote=true]',function () {
+    console.log("hello");
+    history.pushState(null,null,$(this).attr('href'));
+  });
+
 
   $('#term').autocomplete({
     source: "/contacts/autocomplete",
@@ -16,14 +25,14 @@ $( document ).on('turbolinks:load',function() {
   });
 
   $("#add-new-group").hide();
-  $('#add-group-btn').click(function() {
+  $('body').on('click','#add-new-group',function() {
     $("#add-new-group").slideToggle(function() {
       $('#new_group').focus();
     });
     return false;
   });
 
-  $('#save-group-btn').click(function(event) {
+  $('body').on('click','#save-group-btn',function(event) {
     event.preventDefault();
 
     let newGroup = $("#new_group");
