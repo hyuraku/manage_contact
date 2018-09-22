@@ -24,3 +24,22 @@
 //= require jquery-ui/widgets/menu
 //= require toastr
 //= require_tree .
+
+$( document ).on('turbolinks:load', function() {
+    $('#term').autocomplete({
+        source: "/contacts/autocomplete",
+        minLength: 3,
+        select: function (event, ui) {
+            $('#term').val(ui.item.value);
+            $(this).closest('form').submit();
+        }
+    });
+});
+
+$(document).on('click', '.pagination a[data-remote=true], a.list-group-item', function() {
+    history.pushState({}, '', $(this).attr('href'));
+});
+
+$(window).on('popstate', function() {
+    $.get(document.location.href);
+});
