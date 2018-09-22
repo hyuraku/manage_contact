@@ -11,7 +11,7 @@ RSpec.describe Contact, type: :model do
     context "enter all item" do
       it "need all item for contact" do
         new_contact = Contact.create!(contact_params)
-        expect(Contact.count).to eq 1
+        expect(new_contact.save).to be_truthy
       end
     end
 
