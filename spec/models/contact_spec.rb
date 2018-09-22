@@ -14,7 +14,7 @@ RSpec.describe Contact, type: :model do
     let(:group_id){ first_group.id }
     context "enter all item" do
       it "need all item for contact" do
-        new_contact = Contact.create!(contact_params)
+        new_contact = Contact.new(contact_params)
         expect(new_contact.save).to be_truthy
       end
     end
@@ -63,7 +63,17 @@ RSpec.describe Contact, type: :model do
     end
 
     context "delete one item" do
+      it "delete name" do
+        new_contact = Contact.create(contact_params)
+        expect(new_contact.update( name: "" )) .to be_falsey
+      end
+    end
 
+    context "one user change other user's item" do
+      it "delete name" do
+        new_contact = Contact.create(contact_params)
+        expect(new_contact.update( name: "" )) .to be_falsey
+      end
     end
   end
 
