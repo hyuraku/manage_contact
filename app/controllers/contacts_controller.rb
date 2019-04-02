@@ -10,18 +10,18 @@ class ContactsController < ApplicationController
   end
 
   def new
-      @contact = Contact.new
+    @contact = Contact.new
   end
 
   def create
-      @contact = current_user.contacts.build(contact_params)
-      if @contact.save
-          flash[:success] = "Contact was successfully created."
-          redirect_to contacts_path(previous_query_string)
-      else
-          flash[:error] = "Contact failed to be created."
-          render :new
-      end
+    @contact = current_user.contacts.build(contact_params)
+    if @contact.save
+        flash[:success] = "Contact was successfully created."
+        redirect_to contacts_path(previous_query_string)
+    else
+        flash[:error] = "Contact failed to be created."
+        render :new
+    end
   end
 
   def edit
@@ -58,7 +58,7 @@ class ContactsController < ApplicationController
   end
 
   def contact_params
-      params.require(:contact).permit(:name, :email, :company, :address, :phone, :group_id, :avatar)
+    params.require(:contact).permit(:name, :email, :company, :address, :phone, :group_id, :avatar)
   end
 
   def previous_query_string
