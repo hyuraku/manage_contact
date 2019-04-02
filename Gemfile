@@ -76,7 +76,7 @@ end
 
 gem 'faker'
 
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem "bootstrap-sass", ">= 3.4.1"
 gem 'jquery-rails'
 
 gem 'kaminari'
@@ -93,7 +93,7 @@ end
 
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
-gem 'devise'
+gem "devise", ">= 4.6.0"
 
 gem 'pundit'
 
@@ -102,3 +102,4 @@ gem 'rake', '>= 2.0.6', '< 11.0'
 gem 'toastr-rails'
 gem "nokogiri", '>= 1.8.5'
 gem "loofah", ">= 2.2.3"
+gem "rack", ">= 2.0.6"
