@@ -97,7 +97,7 @@ gem "devise", ">= 4.6.0"
 
 gem 'pundit'
 
-gem 'rake', '>= 2.0.6', '< 11.0'
+gem 'rake', '>= 2.0.6', '< 13.0'
 
 gem 'toastr-rails'
 gem "nokogiri", '>= 1.8.5'
