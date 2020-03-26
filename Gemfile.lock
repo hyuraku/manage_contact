@@ -375,7 +375,7 @@ DEPENDENCIES
   puma (~> 3.12)
   pundit
   rack (>= 2.0.6)
-  rails (~> 6.0.0)
+  rails (~> 6.0.1)
   rails-controller-testing
   rake (>= 2.0.6, < 13.0)
   rspec
