@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include Pagy::Frontend
 
   def active_item(uri)
     uri_segment = request.fullpath.split(/\/|\?/)

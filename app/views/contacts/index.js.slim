@@ -1,4 +1,4 @@
 | $('#contacts').html("#{j (render @contacts) }");
-| $('#paginator').html("#{j(paginate @contacts,remote: true)}");
+| $('#paginator').html("#{j(pagy_bootstrap_nav(@pagy).html_safe)}");
 | $('#sidebar').html("#{j(render 'layouts/sidebar')}");
 | $('#group_id').val(#{j(params[:group_id])});

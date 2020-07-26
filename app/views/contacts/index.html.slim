@@ -1,9 +1,6 @@
 .col-md-3#sidebar
   = render 'layouts/sidebar'
 .col-md-9
-  / p.notice= notice
-  / p.alert= alert
-  / = render 'layouts/message' if !flash.empty?
   .panel.panel-default
     .panel-heading.clearfix
       .pull-left
@@ -20,4 +17,4 @@
         .alert.alert-warning
             | Not Fount
   .text-center#paginator
-    = paginate @contacts,remote: true
+    = pagy_bootstrap_nav(@pagy).html_safe
