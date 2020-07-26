@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
 
   def index
     session[:selected_group_id] = params[:group_id]
-    @contacts = current_user.contacts.by_group(params[:group_id]).search(params[:term]).order(created_at: :desc).page(params[:page])
+    @pagy, @contacts = pagy(current_user.contacts.by_group(params[:group_id]).search(params[:term]).order(created_at: :desc))
   end
 
   def new
@@ -47,7 +47,7 @@ class ContactsController < ApplicationController
   end
 
   def autocomplete
-    @contacts = current_user.contacts.search(params[:term]).order(created_at: :desc).page(params[:page])
+    @contacts = current_user.contacts.search(params[:term]).order(created_at: :desc)
     render json: @contacts.map{ |contact|{ id: contact.id, value: contact.name} }
   end
 
