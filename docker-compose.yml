@@ -2,7 +2,7 @@ version: '3.4'
 x-app: &app
   build:
     context: .
-    dockerfile: ./Dockerfile
+    dockerfile: ./.dockerdev/Dockerfile
     args:
       RUBY_VERSION: '2.6.5'
       PG_MAJOR: '11'
@@ -65,7 +65,7 @@ services:
       interval: 5s
   
   proxy:
-    build: containers/nginx
+    build: ./.dockerdev/nginx
     restart: always
     ports:
       - "80:80"
