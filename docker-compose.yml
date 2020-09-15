@@ -46,7 +46,7 @@ services:
 
   rails:
     <<: *backend
-    command: bundle exec rails server -b 0.0.0.0
+    command: /bin/sh -c "rm -f /manageContact/tmp/pids/server.pid && bundle exec rails server -b 0.0.0.0"
     ports:
       - '3000:3000'
     volumes:
