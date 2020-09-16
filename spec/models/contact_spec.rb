@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Contact, type: :model do
-  let!(:first_user){ User.create(id: 1,name: "jone doe",email: "heaven@gmail.com",password: "abcdefg") }
-  let!(:first_group){ Group.create(id: 1,name: "Organization",user_id: first_user.id)}
+  let!(:first_user){ User.create(name: "jone doe",email: "heaven@gmail.com",password: "abcdefg") }
+  let!(:first_group){ Group.create(name: "Organization",user_id: first_user.id)}
 
-  let!(:second_user){ User.create(id: 2,name: "jone tim",email: "earth@gmail.com",password: "abcdefg") }
-  let!(:second_group){ Group.create(id: 1,name: "Organization",user_id: first_user.id)}
+  let!(:second_user){ User.create(name: "jone tim",email: "earth@gmail.com",password: "abcdefg") }
+  let!(:second_group){ Group.create(name: "Organization",user_id: first_user.id)}
 
   let!(:contact_params){ {name: "Tim ford",company: "Tomas",address:"123town", email: "fard@test.com",user_id: user_id,group_id: group_id} }
 
@@ -85,6 +85,4 @@ RSpec.describe Contact, type: :model do
     end
   end
 
-  after(:all) { Group.destroy_all }
-  after(:all) { User.destroy_all }
 end
