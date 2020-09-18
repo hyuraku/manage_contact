@@ -1,0 +1,30 @@
+version: '4'
+
+compose:
+  files:
+    - docker-compose.yml
+
+interaction:
+  bash:
+    description: Open the Bash shell in rails's container
+    service: rails
+    command: /bin/bash
+
+  pry:
+    description: Open Pry console
+    service: rails
+    command: rails console
+
+  bundle:
+    description: Run Bundler commands
+    service: rails
+    command: bundle
+
+  rspec:
+    description: Run Rspec commands
+    service: rails
+    command: bundle exec rspec
+
+provision:
+  - rm -rf Gemfile.lock
+  - dip bundle install
