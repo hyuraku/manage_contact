@@ -105,4 +105,4 @@ gem "loofah", ">= 2.2.3"
 gem "rack", ">= 2.0.6"
 gem "yard", ">= 0.9.20"
 
-gem 'pagy', '~> 3.5' 
+gem 'pagy', '>= 3.10' 
