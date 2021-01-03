@@ -100,7 +100,7 @@ gem 'pundit'
 gem 'rake', '>= 2.0.6', '< 13.0'
 
 gem 'toastr-rails'
-gem "nokogiri", '>= 1.8.5'
+gem "nokogiri", ">= 1.11.0.rc4"
 gem "loofah", ">= 2.2.3"
 gem "rack", ">= 2.0.6"
 gem "yard", ">= 0.9.20"
