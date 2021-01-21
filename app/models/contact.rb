@@ -1,3 +1,32 @@
+# == Schema Information
+#
+# Table name: contacts
+#
+#  id                  :bigint           not null, primary key
+#  address             :string
+#  avatar_content_type :string
+#  avatar_file_name    :string
+#  avatar_file_size    :bigint
+#  avatar_updated_at   :datetime
+#  company             :string
+#  email               :string
+#  name                :string
+#  phone               :string
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  group_id            :bigint
+#  user_id             :bigint
+#
+# Indexes
+#
+#  index_contacts_on_group_id  (group_id)
+#  index_contacts_on_user_id   (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (group_id => groups.id)
+#  fk_rails_...  (user_id => users.id)
+#
 class Contact < ApplicationRecord
   belongs_to :group
   belongs_to :user
