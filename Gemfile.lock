@@ -64,6 +64,10 @@ GEM
     autoprefixer-rails (10.2.5.0)
       execjs (< 2.8.0)
     bcrypt (3.1.16)
+    better_errors (2.9.1)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
     bindex (0.8.1)
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
@@ -343,6 +347,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord (>= 6.0.3.5)
   annotate
+  better_errors
   bootstrap-sass (>= 3.4.1)
   bullet
   byebug
