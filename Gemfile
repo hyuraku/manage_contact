@@ -8,7 +8,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '6.0.4.1'
+gem 'rails', github: 'rails/rails', tag: 'v7.0.0.alpha2'
 gem "activerecord", ">= 6.0.3.5"
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -108,4 +108,4 @@ gem "loofah", ">= 2.2.3"
 gem "rack", ">= 2.0.6"
 gem "yard", ">= 0.9.20"
 
-gem 'pagy', '>= 3.10' 
+gem 'pagy', '>= 3.10'
