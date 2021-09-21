@@ -67,7 +67,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-doc'
 
-  gem 'rspec-rails','3.6.0'
+  gem 'rspec-rails','>=4.0.2'
 end
 
 group :test do
@@ -96,7 +96,7 @@ end
 
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
-gem "devise", ">= 4.6.0"
+gem 'devise', git: 'https://github.com/strobilomyces/devise', branch: 'patch-1'
 
 gem 'pundit'
 
