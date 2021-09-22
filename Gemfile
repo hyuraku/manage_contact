@@ -8,7 +8,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '6.0.4.1'
+gem 'rails', github: 'rails/rails', tag: 'v7.0.0.alpha2'
 gem "activerecord", ">= 6.0.3.5"
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -67,7 +67,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-doc'
 
-  gem 'rspec-rails','3.6.0'
+  gem 'rspec-rails','>=4.0.2'
 end
 
 group :test do
@@ -96,7 +96,7 @@ end
 
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
-gem "devise", ">= 4.6.0"
+gem 'devise', git: 'https://github.com/strobilomyces/devise', branch: 'patch-1'
 
 gem 'pundit'
 
@@ -108,4 +108,4 @@ gem "loofah", ">= 2.2.3"
 gem "rack", ">= 2.0.6"
 gem "yard", ">= 0.9.20"
 
-gem 'pagy', '>= 3.10' 
+gem 'pagy', '>= 3.10'
