@@ -400,7 +400,6 @@ DEPENDENCIES
   selenium-webdriver
   slim
   slim-rails
-  spring
   spring-watcher-listen (~> 2.0.0)
   toastr-rails
   turbolinks (~> 5)
