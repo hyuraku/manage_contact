@@ -86,7 +86,7 @@ gem 'paperclip', '~> 6.1'
 gem 'jasny-bootstrap-rails', '~> 3.1', '>= 3.1.3'
 
 group :development do
-  gem 'bullet'
+  # gem 'bullet'
 
   gem 'guard', '~> 2.14.0'
   gem 'guard-rspec', '~> 4.7.2'
