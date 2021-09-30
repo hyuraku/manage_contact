@@ -1,29 +1,29 @@
-= form_for @contact,html: { multipart: true },remote: local_assigns[:ajax_form] do |f|
+= form_for contact, html: { multipart: true },remote: local_assigns[:ajax_form] do |f|
   .panel-body
     .form-horizontal
       .row
         .col-md-8
-          = content_tag :div,class: "form-group #{ "has-error" if has_error?(@contact,:name) }" do
+          = content_tag :div,class: "form-group #{ "has-error" if has_error?(contact,:name) }" do
             .control-label.col-md-3
               = f.label 'Name'
             .col-md-8
               = f.text_field :name,class: 'form-control'
-              - if has_error?(@contact,:name)
+              - if has_error?(contact,:name)
                 span.help-block
-                  = get_error(@contact,:name)
+                  = get_error(contact,:name)
           .form-group
             .control-label.col-md-3
               = f.label 'Company'
             .col-md-8
               = f.text_field :company,class: 'form-control'
-          = content_tag :div,class: "form-group #{ "has-error" if has_error?(@contact,:email) }" do
+          = content_tag :div,class: "form-group #{ "has-error" if has_error?(contact,:email) }" do
             .control-label.col-md-3
               = f.label 'Email'
             .col-md-8
               = f.text_field :email,class: 'form-control'
-              - if has_error?(@contact,:email)
+              - if has_error?(contact,:email)
                 span.help-block
-                  = get_error(@contact,:email)
+                  = get_error(contact,:email)
           .form-group
             .control-label.col-md-3[for="phone"]
               = f.label 'Phone'
@@ -34,7 +34,7 @@
               = f.label 'Address'
             .col-md-8
               = f.text_area :address,class: 'form-control',row: 3
-          = content_tag :div,class: "form-group #{ "has-error" if has_error?(@contact,:group_id) }" do
+          = content_tag :div,class: "form-group #{ "has-error" if has_error?(contact,:group_id) }" do
             .control-label.col-md-3
               = f.label 'Group'
             .col-md-5
@@ -44,11 +44,11 @@
             .col-md-3
               a#add-group-btn.btn.btn-default.btn-block[href="#"]
                 | Add Group
-            - if has_error?(@contact,:group_id)
+            - if has_error?(contact,:group_id)
               .form-group
                 .col-md-offset-3.col-md-8
                   span.help-block
-                    = get_error(@contact,:group_id)
+                    = get_error(contact,:group_id)
           #add-new-group.form-group
             .col-md-offset-3.col-md-8
               .input-group
@@ -59,7 +59,7 @@
         .col-md-4
           .fileinput.fileinput-new[data-provides="fileinput"]
             .fileinput-new.thumbnail[style="width: 150px; height: 150px;"]
-              = image_tag @contact.avatar.url(:medium)
+              = image_tag contact.avatar.url(:medium)
             .fileinput-preview.fileinput-exists.thumbnail[style="max-width: 200px; max-height: 150px;"]
             .text-center
               span.btn.btn-default.btn-file
@@ -76,5 +76,5 @@
         .col-md-8
           .row
             .col-md-offset-3.col-md-6
-              = f.submit @contact.new_record? ? "Save": "Update",class: "btn btn-primary"
+              = f.submit contact.new_record? ? "Save": "Update",class: "btn btn-primary"
               = link_to 'Cancel',contacts_path ,class: "btn btn-default"
