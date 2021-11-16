@@ -13,7 +13,7 @@ gem "activerecord", ">= 6.0.3.5"
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '>= 4.3.8'
+gem 'puma', ">= 5.5.1"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 6.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -103,7 +103,7 @@ gem 'pundit'
 gem 'rake', '>= 2.0.6', '< 13.0'
 
 gem 'toastr-rails'
-gem "nokogiri", ">= 1.11.0.rc4"
+gem "nokogiri", ">= 1.12.5"
 gem "loofah", ">= 2.2.3"
 gem "rack", ">= 2.0.6"
 gem "yard", ">= 0.9.20"
