@@ -15,6 +15,8 @@ RUN apt-get update -qq \
     curl \
     less \
     git \
+    wget \
+    shared-mime-info \
     && apt-get clean \
     && rm -rf /var/cache/apt/archives/* \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
@@ -25,14 +27,14 @@ RUN curl -sSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 
 RUN curl -sL https://deb.nodesource.com/setup_$NODE_MAJOR.x | bash -
 
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -\
-    && echo 'deb http://dl.yarnpkg.com/debian/ stable main' > /etc/apt/sources.list.d/yarn.list
+RUN wget --quiet -O - /tmp/pubkey.gpg https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+    echo 'deb http://dl.yarnpkg.com/debian/ stable main' > /etc/apt/sources.list.d/yarn.list
 
 COPY .dockerdev/Aptfile /tmp/Aptfile
 RUN apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get -yq dist-upgrade &&\
     DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends\
     build-essential\
-    postgresql-client-$PG_MAJOR\
+    postgresql-client \
     nodejs\
     yarn=$YARN_VERSION-1\
     $(cat /tmp/Aptfile | xargs) &&\
