@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.7.1'
+ruby '2.7.5'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -83,6 +83,7 @@ gem "bootstrap-sass", ">= 3.4.1"
 gem 'jquery-rails'
 
 gem 'paperclip', '~> 6.1'
+gem 'mimemagic','0.3.10'
 gem 'jasny-bootstrap-rails', '~> 3.1', '>= 3.1.3'
 
 group :development do
