@@ -8,7 +8,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '7.0.0'
+gem 'rails', '7.0.2.4'
 gem "activerecord", ">= 6.0.3.5"
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -97,7 +97,7 @@ end
 
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
-gem 'devise', git: 'https://github.com/strobilomyces/devise', branch: 'patch-1'
+gem 'devise'
 
 gem 'pundit'
 
