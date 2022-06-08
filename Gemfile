@@ -8,7 +8,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', github: 'rails/rails', tag: 'v7.0.0.alpha2'
+gem 'rails', '7.0.0'
 gem "activerecord", ">= 6.0.3.5"
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
