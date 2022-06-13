@@ -97,3 +97,5 @@ gem 'rack', '>= 2.0.6'
 gem 'rake', '>= 2.0.6', '< 13.0'
 gem 'toastr-rails'
 gem 'yard', '>= 0.9.20'
+
+gem "zeitwerk", "~> 2.5"
